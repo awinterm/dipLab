@@ -56,7 +56,7 @@ public class FoodServiceTipCalculator  implements TipCalculator {
         return tip;
     }
 
-    @Override
+    
     public final void setBill(double billAmt) {
         if(billAmt < minBill) {
             throw new IllegalArgumentException(billEntryErr);

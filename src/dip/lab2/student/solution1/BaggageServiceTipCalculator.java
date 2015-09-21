@@ -9,58 +9,61 @@ package dip.lab2.student.solution1;
  *
  * @author Andrew Wintermyer
  */
-public class BaggageServiceTipCalculator {
-    private final double MIN_BILL = 0.00;
-    private final double MAX_BILL = 100.00;
-    private final String BILL_ENTRY_ERR =
-            "Error: bill must be between " + MIN_BILL + " and "
-            + MAX_BILL;
-    private final double GOOD_RATE = 0.20;
-    private final double FAIR_RATE = 0.15;
-    private final double POOR_RATE = 0.10;
+public class BaggageServiceTipCalculator implements TipCalculator {
+    
+    private final double goodRate = 0.20;
+    private final double fairRate = 0.15;
+    private final double poorRate = 0.10;
 
     private double baseTipPerBag;
     private int bagCount;
-    public enum ServiceQuality {
-        GOOD, FAIR, POOR
-    }
+
     private ServiceQuality serviceQuality;
 
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
-        this.setServiceRating(q); // perform validation
+        if(bags < 0){
+           throw new IllegalArgumentException(
+                    "bag count must be greater than or equal to zero");
+        }
+        else {
+        
+        this.setServiceRating(q); // its an enum I thought we didn't need to validate this.
         this.setBagCount(bags);
 
         baseTipPerBag = 1.00; // set default value
     }
-
-    public double getTipForBaggeHandler() {
+    }
+    
+    @Override
+    public final double getTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
         return tip;
     }
 
+    @Override
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
 
-    public int getBagCount() {
+    public final int getBagCount() {
         return bagCount;
     }
 
@@ -72,16 +75,20 @@ public class BaggageServiceTipCalculator {
         this.bagCount = bagCount;
     }
 
-    public double getBaseTipPerBag() {
+    public final double getBaseTipPerBag() {
         return baseTipPerBag;
     }
 
-    public void setBaseTipPerBag(double baseTipPerBag) {
+    public final void setBaseTipPerBag(double baseTipPerBag) {
         if(baseTipPerBag < 0) {
             throw new IllegalArgumentException(
                     "error: base tip must be greater than or equal to zero");
         }
         this.baseTipPerBag = baseTipPerBag;
     }
+
+    
+
+    
 
 }

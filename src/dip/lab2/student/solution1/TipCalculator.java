@@ -18,6 +18,6 @@ public abstract interface TipCalculator {
 }
      public abstract void setServiceRating(ServiceQuality q);
      public abstract double getTip();
-     public abstract void setBill(double billAmt);
+    // public abstract void setBill(double billAmt);
     
 }
