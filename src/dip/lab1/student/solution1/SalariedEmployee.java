@@ -60,6 +60,14 @@ public class SalariedEmployee implements Employee {
              this.annualBonus = annualBonus;
              }
          }
+         
+        /*
+         * Not sure if this should even exist anymore for the sake of this program.
+         * It's an unused method at this point. I'm leaving it in here, its a getter of the 
+         * Salary property, could be used in testing I suppose. getAnualWage is the correct method for
+         * total made in a year.
+         */ 
+         
         public final double getAnnualSalary() {
         return annualSalary;
     }
