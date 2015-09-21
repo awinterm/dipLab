@@ -5,21 +5,22 @@
  */
 package dip.lab2.student.solution1;
 
-/** 
+/**
  *
  * @author andre_000
  */
 public abstract interface TipCalculator {
-    
-  // I want the method that sets the enum here.
-    
-    
+
+    // I want the method that sets the enum here.
     // Not horrible, but better as its own class. My lack of Enum knowledge is awesome.
     public enum ServiceQuality {
-     GOOD, FAIR, POOR
-}
-     public abstract void setServiceRating(ServiceQuality q);
-     public abstract double getTip();
+
+        GOOD, FAIR, POOR
+    }
+
+    public abstract void setServiceRating(ServiceQuality q);
+
+    public abstract double getTip();
     // public abstract void setBill(double billAmt);
-    
+
 }

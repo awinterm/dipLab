@@ -4,17 +4,15 @@
  * and open the template in the editor.
  */
 package dip.lab2.student.solution1;
- 
+
 /**
  *
  * @author andre_000
  */
 public class TipService {
-    
-    
-    public final double calculateTip(TipCalculator t){
-        
-        
+
+    public final double calculateTip(TipCalculator t) {
+
         return t.getTip();
     }
 }

@@ -1,47 +1,43 @@
 package dip.lab2.student.solution1;
- 
 
 /**
- * An example low-level class. Does this class definition follow the DIP?
- * If not, fix it.
+ * An example low-level class. Does this class definition follow the DIP? If
+ * not, fix it.
  *
  * Any other best practice violations? Fix them too.
  *
  * @author Andrew Wintermyer
  */
 public class BaggageServiceTipCalculator implements TipCalculator {
-    
+
     private double goodRate = 0.20;
     private double fairRate = 0.15;
     private double poorRate = 0.10;
 
     // There was an error msg here. This might need to come back. Bill entry error
-    
-    
     private double baseTipPerBag;
     private int bagCount;
 
     private ServiceQuality serviceQuality;
 
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
-        if(bags < 0){
-           throw new IllegalArgumentException(
+        if (bags < 0) {
+            throw new IllegalArgumentException(
                     "bag count must be greater than or equal to zero");
-        }
-        else {
-        
-        this.setServiceRating(q); // its an enum I thought we didn't need to validate this.
-        this.setBagCount(bags);
+        } else {
 
-        baseTipPerBag = 1.00; // set default value
+            this.setServiceRating(q); // its an enum I thought we didn't need to validate this.
+            this.setBagCount(bags);
+
+            baseTipPerBag = 1.00; // set default value
+        }
     }
-    }
-    
+
     @Override
     public final double getTip() {
         double tip = 0.00; // always initialize local variables
 
-        switch(serviceQuality) {
+        switch (serviceQuality) {
             case GOOD:
                 tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
@@ -71,7 +67,7 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     }
 
     public final void setBagCount(int bagCount) {
-        if(bagCount < 0) {
+        if (bagCount < 0) {
             throw new IllegalArgumentException(
                     "bag count must be greater than or equal to zero");
         }
@@ -83,14 +79,14 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     }
 
     public final void setBaseTipPerBag(double baseTipPerBag) {
-        if(baseTipPerBag < 0) {
+        if (baseTipPerBag < 0) {
             throw new IllegalArgumentException(
                     "error: base tip must be greater than or equal to zero");
         }
         this.baseTipPerBag = baseTipPerBag;
     }
 
-        public double getGoodRate() {
+    public double getGoodRate() {
         return goodRate;
     }
 
@@ -113,7 +109,5 @@ public class BaggageServiceTipCalculator implements TipCalculator {
     public void setPoorRate(double poorRate) {
         this.poorRate = poorRate;
     }
-
-    
 
 }
