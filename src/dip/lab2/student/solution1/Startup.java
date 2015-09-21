@@ -26,6 +26,8 @@ public class Startup {
     
         
         
+    // These are for testing, you'd usually get some input from the user that you'd have to 
+    // use for this sort of program. probably in an non validation needing way. 
         
     String varTest = "GOOD" ;
     String varTest2 = "FAIR";

@@ -11,10 +11,13 @@ package dip.lab2.student.solution1;
  */
 public class BaggageServiceTipCalculator implements TipCalculator {
     
-    private final double goodRate = 0.20;
-    private final double fairRate = 0.15;
-    private final double poorRate = 0.10;
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
 
+    // There was an error msg here. This might need to come back. Bill entry error
+    
+    
     private double baseTipPerBag;
     private int bagCount;
 
@@ -87,7 +90,29 @@ public class BaggageServiceTipCalculator implements TipCalculator {
         this.baseTipPerBag = baseTipPerBag;
     }
 
-    
+        public double getGoodRate() {
+        return goodRate;
+    }
+
+    public void setGoodRate(double goodRate) {
+        this.goodRate = goodRate;
+    }
+
+    public double getFairRate() {
+        return fairRate;
+    }
+
+    public void setFairRate(double fairRate) {
+        this.fairRate = fairRate;
+    }
+
+    public double getPoorRate() {
+        return poorRate;
+    }
+
+    public void setPoorRate(double poorRate) {
+        this.poorRate = poorRate;
+    }
 
     
 

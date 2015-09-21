@@ -12,12 +12,16 @@ package dip.lab2.student.solution1;
  */
 public class FoodServiceTipCalculator  implements TipCalculator {
     // I like this, you can change the min bill and it updates the validation.
-    private final double minBill = 0.00;
-    private final String billEntryErr =
-            "Error: bill must be greater than or equal to " + minBill;
-    private final double goodRate = 0.20;
-    private final double fairRate = 0.15;
-    private final double poorRate = 0.10;
+    private double minBill = 0.00;
+   
+    //private final String billEntryErr =
+    //        "Error: bill must be greater than or equal to " + minBill;
+    
+    
+    
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
     private double bill;
 
  
@@ -76,4 +80,37 @@ public class FoodServiceTipCalculator  implements TipCalculator {
         return serviceQuality;
     }
 
+    public double getMinBill() {
+        return minBill;
+    }
+
+    public void setMinBill(double minBill) {
+        this.minBill = minBill;
+    }
+
+    public double getGoodRate() {
+        return goodRate;
+    }
+
+    public void setGoodRate(double goodRate) {
+        this.goodRate = goodRate;
+    }
+
+    public double getFairRate() {
+        return fairRate;
+    }
+
+    public void setFairRate(double fairRate) {
+        this.fairRate = fairRate;
+    }
+
+    public double getPoorRate() {
+        return poorRate;
+    }
+
+    public void setPoorRate(double poorRate) {
+        this.poorRate = poorRate;
+    }
+
+    
 }

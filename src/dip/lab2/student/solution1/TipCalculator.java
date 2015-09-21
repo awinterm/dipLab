@@ -13,6 +13,8 @@ public abstract interface TipCalculator {
     
   // I want the method that sets the enum here.
     
+    
+    // Not horrible, but better as its own class. My lack of Enum knowledge is awesome.
     public enum ServiceQuality {
      GOOD, FAIR, POOR
 }
