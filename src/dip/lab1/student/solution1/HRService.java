@@ -1,7 +1,7 @@
 package dip.lab1.student.solution1;
 
-
-import javax.swing.JOptionPane;
+// don't need this anymore.
+// import javax.swing.JOptionPane;
 
 /**
  * A high-level class that delegates to employee objects to do the work. Does
@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
  * @Andrew Wintermyer
  */
 public class HRService {
+    
+
     /** 
      * Constants can be used for retrieving annual wages of
      * various employee types. Is this the best way to go? Do we have
@@ -23,6 +25,12 @@ public class HRService {
      * 
      * Since Java one was like intro to programming again but now in Java. I really feel some structure could
      * have been introduced earlier. Maybe it was, maybe I didn't get it.
+     * 
+     * Wait... you would need this if you called the default constructor or left that in?
+     * 
+     * no that's dumb.
+     * 
+     * 
      */
     public static final String SALARIED_TYPE = "Salaried";
     public static final String HOURLY_TYPE = "Hourly";
@@ -32,7 +40,7 @@ public class HRService {
      * type safety?  
      * 
      * Um... maybe the safety.. I have used enums like maybe 3 times. It always seemed like a 
-     * hardcoded array. I would like to know when to use them. But this seems to be just as bad 
+     * hard coded array. I would like to know when to use them. But this seems to be just as bad 
      * in the scope of DIP as the above. 
      * 
      * I think you would do this if maybe there was something you needed to do inside a specific instance of
@@ -95,7 +103,7 @@ public class HRService {
      * @return = will return the amount earned by employee in a year.
      * 
      */
-    public double getAnnualCompensationForEmployee(Employee e) {
+    public final double getAnnualCompensationForEmployee(Employee e) {
         return e.getAnnualWages();
     }
 }
