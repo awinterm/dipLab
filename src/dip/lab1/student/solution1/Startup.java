@@ -20,11 +20,11 @@ public class Startup {
         //Low-level modules
         Employee emp1 = new HourlyEmployee(7.25, 2080);
         Employee emp2 = new SalariedEmployee(30000, 3000);
-        
+        Employee emp3 = new HourlyWithBonusEmployee(10.00, 20, 1);
         // High-level module
         
         // I peeked for this as I didn't know exactly what to do with this start up as far as tests.
-        Employee[] employees = {emp1, emp2,};
+        Employee[] employees = {emp1, emp2, emp3};
         
         
         HRService hr = new HRService();
