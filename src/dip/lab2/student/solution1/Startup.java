@@ -16,19 +16,20 @@ import javax.swing.JOptionPane;
  * 4. Now switch to a different calculator instance and pass that to the
  *    high-level class. Did it work? Are the low-level instances
  *    interchangeable? The DIP requires this.
- * 
+ *  
  * @author your name goes here
  */
 public class Startup {
     public static enum ServiceQuality {
            GOOD, FAIR, POOR
     };
- 
+    
     public static void main(String[] args) {       
         
     String varTest = "GOOD" ;
     String varTest2 = "FAIR";
-        
+          
+   
         
         TipCalculator tip1 = new FoodServiceTipCalculator( TipCalculator.ServiceQuality.valueOf(varTest), 10.00);
       TipCalculator tip2 = new FoodServiceTipCalculator( TipCalculator.ServiceQuality.valueOf(varTest2), 10.00);

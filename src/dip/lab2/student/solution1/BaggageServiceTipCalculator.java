@@ -1,5 +1,5 @@
 package dip.lab2.student.solution1;
-
+ 
 
 /**
  * An example low-level class. Does this class definition follow the DIP?
