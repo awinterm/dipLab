@@ -13,8 +13,8 @@ public class FoodServiceTipCalculator implements TipCalculator {
     // I like this, you can change the min bill and it updates the validation.
     private double minBill = 0.00;
 
-    //private final String billEntryErr =
-    //        "Error: bill must be greater than or equal to " + minBill;
+    private final String billEntryErr =
+            "Error: bill must be greater than or equal to " + minBill;
     private double goodRate = 0.20;
     private double fairRate = 0.15;
     private double poorRate = 0.10;
