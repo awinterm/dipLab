@@ -1,14 +1,18 @@
 package dip.lab1.student.solution1;
 
 /**
- * The concrete super class of all employee types. What's wrong with this class?
- * Find and fix all encapsulation, DIP and best practice problems learned so
- * far.
+ * The employee object interface
+ * 
+ * 
  *
  * @author your name goes here
  */
 public abstract interface Employee {
 
+    /**
+     * Contractual abstract method of the employee class. 
+     * @return - subclasses return calculated AnnualWage Value.
+     */
     public abstract double getAnnualWages();
 
 }

@@ -1,51 +1,57 @@
 package dip.lab1.student.solution1;
 
 /**
- * A simple implementation sub-class of Employee. These are low-level classes in
- * the DIP. Does it meet the rules of DIP? If not fix it.
+ * A lower level class implementing Employee. 
+ * 
  *
- * @author your name goes here
+ * @author awinterm
  */
 public class SalariedEmployee implements Employee {
 
     private double annualSalary;
     private double annualBonus;
 
+  
     /**
-     * default constructor. Is this the best way to go? This is the fragility
-     * thing we were talking about. Using this would let you create an instance
-     * of this class with null values. You would have to know to set them before
-     * doing anything else. Forcing them to be declared in the constructor means
-     * the other methods should work.
-     *
-     *
-     */
-    /**
-     * Convenience constructor. Is this the best way to go?
-     *
+     * 
+     *Constructor for Salaried employees
+     * 
      * @param annualSalary - the employee's annual salary
      * @param annualBonus - a bonus benefit, if any
      *
-     * This one forces the user to set values to these properties. So you can't
-     * get null values later.
+     * 
+     * 
      */
     public SalariedEmployee(double annualSalary, double annualBonus) {
         setAnnualSalary(annualSalary);
         setAnnualBonus(annualBonus);
     }
-
+/**
+ * Contractual override of the abstract method in the employee class
+ * @return calculated annual Wage
+ */
     @Override
     public final double getAnnualWages() {
         return (annualSalary + annualBonus);
     }
 
-    ;
+    /**
+     * getter for annualBonus
+     * @return total of bonuses earned in a year.
+     */
     
     
         public final double getAnnualBonus() {
         return annualBonus;
     }
 
+        
+        /**
+         * setter for annual bonus value. Does some validation. 
+         * WARNING The sout is BAD design Hard coded. 
+         * Should be a variable msg in future versions.
+         * @param annualBonus 
+         */
     public final void setAnnualBonus(double annualBonus) {
 
         if (annualBonus < 0 || annualBonus > 1000000000) {
@@ -57,16 +63,20 @@ public class SalariedEmployee implements Employee {
         }
     }
 
-    /*
-     * Not sure if this should even exist anymore for the sake of this program.
-     * It's an unused method at this point. I'm leaving it in here, its a getter of the 
-     * Salary property, could be used in testing I suppose. getAnualWage is the correct method for
-     * total made in a year.
-     */
+  /**
+   * getter for annual salary
+   *@return annualSalary - annual salary.
+   * 
+   */
     public final double getAnnualSalary() {
         return annualSalary;
     }
-
+/**
+ * setter for annual Salary
+ * Validation Hard Coded. 
+ * WARNING SHould update this in future versions to make less rigid.
+ * @param annualSalary 
+ */
     public final void setAnnualSalary(double annualSalary) {
         if (annualSalary < 0) {
             System.out.println("Paying to work is a bad practice");
